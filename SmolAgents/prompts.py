@@ -19,6 +19,38 @@ class PromptTemplates(BaseModel):
             For each data point that you find, visit the source url to confirm numbers.
             {task}
             """
+        @classmethod
+        def evaluate_as_software_architect_and_security(cls, task):
+            return f"""
+            As both a software developer and a security expert, evaluate this python script for a web application
+            and suggest architectural improvements and security enhancements.
+            
+            {task}
+            """
+
+        @classmethod
+        def open_source_contributor(cls, task):
+            return f"""
+            As a contributor to open-source python projects, critique this pyton library for data visualization and suggest
+            enhancements to make it comparable to major libraries like Matplotlib or Seaborn.
+            {task}
+            """
+
+        @classmethod
+        def nlp_expert(cls, code):
+            return f"""
+            As an NLP expert, suggest improvements to this text summarization feature to enhance its functionality and accuracy.
+            
+            {code}
+            """
+
+        @classmethod
+        def software_tester(cls, code):
+            return f"""
+            As a software tester, analyze this function for potential edge cases and suggest robust handling strategies.
+            
+            {code}
+            """
 
     class CoderSystemPrompt(BaseModel):
         @classmethod
